@@ -3,7 +3,6 @@ kind: Deployment
 metadata: 
   name: go-hpa
 spec:
-  replicas: 1
   selector:
     matchLabels:
       app: go-hpa
@@ -15,8 +14,10 @@ spec:
       containers:
       - name: go-hpa
         image: farjax/go-hpa
+        ports:
+            - containerPort: 8083
         resources:
-          limits:
-            cpu: 100m
           requests:
-            cpu: 50m
+            cpu: "50m"
+          limits:
+            cpu: "100m"
