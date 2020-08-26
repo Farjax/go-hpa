@@ -1,6 +1,6 @@
 steps:
 
-- id: "Rodando go test"
+- id: "Rodando go test. (2)"
   name: "gcr.io/cloud-builders/go"
   dir: 'src/app'
   env: ["GOPATH=."]
